@@ -11,6 +11,8 @@ body {
 }
 
 .block1 {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     margin-left: auto;
     margin-right: auto;
     width: 600px;
@@ -28,7 +30,7 @@ body {
     margin-top: 10rem;
     transition: transform 0.3s ease;
     top: 0;
-
+    backface-visibility: hidden;
     bottom: 0;
-
+    transform: rotate(0deg) translateZ(0)
 }

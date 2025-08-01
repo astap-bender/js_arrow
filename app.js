@@ -1,4 +1,4 @@
 document.querySelector('.arrow').addEventListener('click', function () {
-    // Переключаем между 0 и 45 градусами при каждом клике
-    this.style.transform = this.style.transform === 'rotate(45deg)' ? 'rotate(0deg)' : 'rotate(45deg)';
+    let rotation = this.style.transform === 'rotate(45deg) translateZ(0px)' ? 'rotate(0deg) translateZ(0px)' : 'rotate(45deg) translateZ(0px)';
+    this.style.transform = rotation;
 });
