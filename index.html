@@ -5,15 +5,20 @@
     <meta charset="utf-8" />
     <link rel="icon" href="data:;base64," type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>title</title>
+    <title>Title</title>
 </head>
 
 <body>
     <div class='block1'>
-        <div class='arrow'></div>
+        <!-- Скрытый чекбокс -->
+        <input type="checkbox" id="toggleArrow" class="hidden-checkbox">
 
+        <!-- Метка, связанная с чекбоксом, на которую мы будем кликать -->
+        <!-- Для стилизации и кликабельности оборачиваем arrow в label -->
+        <label for="toggleArrow" class="arrow-label">
+            <div class='arrow'></div>
+        </label>
     </div>
-    <script src="app.js"></script>
 </body>
 
 </html>

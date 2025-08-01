@@ -8,29 +8,44 @@ body {
     width: 100dvh;
     height: 100dvh;
     background-color: rgba(0, 0, 0, 0.782);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .block1 {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    margin-left: auto;
-    margin-right: auto;
     width: 600px;
-    /* margin-top: 50rem; */
     height: 400px;
     border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Скрываем сам чекбокс */
+.hidden-checkbox {
+    display: none;
+}
+
+/* Метка, которая действует как кнопка для чекбокса */
+.arrow-label {}
 
 .arrow {
     width: 100px;
     height: 100px;
-    border: 2px solid green;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10rem;
+    border: 2px solid red;
     transition: transform 0.3s ease;
-    top: 0;
+    /* Плавный переход */
     backface-visibility: hidden;
-    bottom: 0;
-    transform: rotate(0deg) translateZ(0)
+    /* Для предотвращения артефактов */
+    transform: rotate(0deg) translateZ(0);
+    /* Начальное состояние */
+}
+
+/* Когда чекбокс #toggleArrow отмечен (checked),
+   применяем трансформацию к соседнему элементу .arrow-label,
+   и затем к .arrow внутри .arrow-label */
+.hidden-checkbox:checked+.arrow-label .arrow {
+    transform: rotate(45deg) translateZ(0);
+    /* Конечная трансформация */
 }
