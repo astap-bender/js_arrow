@@ -1,57 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const arrow1 = document.getElementById('arrow1');
-    const arrow2 = document.getElementById('arrow2');
+    const arrow = document.getElementById('arrow');
 
-    // Функция для показа arrow1 и скрытия arrow2
-    function showArrow1() {
-        arrow1.classList.remove('hidden');
-        arrow2.classList.add('hidden');
+    function rotateArrow() {
+        // Получаем текущий угол поворота
+        const currentRotation = arrow.style.transform;
+        let newRotation = 45; // По умолчанию вращаем на 45 градусов
+
+        if (currentRotation) {
+            // Извлекаем текущий угол из строки, если он есть
+            const match = currentRotation.match(/rotate\((.*?)deg\)/);
+            if (match) {
+                const currentAngle = parseFloat(match[1]);
+                newRotation = currentAngle + 45; // Добавляем 45 градусов к текущему
+            }
+        }
+
+        arrow.style.transform = `rotate(${newRotation}deg)`;
     }
 
-    // Функция для показа arrow2 и скрытия arrow1
-    function showArrow2() {
-        arrow1.classList.add('hidden');
-        arrow2.classList.remove('hidden');
-    }
-
-    // Обработчик клика для arrow1
-    arrow1.addEventListener('click', () => {
-        showArrow2(); // При клике на arrow1, показываем arrow2
+    arrow.addEventListener('click', () => {
+        rotateArrow();
     });
-
-    // Обработчик клика для arrow2
-    arrow2.addEventListener('click', () => {
-        showArrow1(); // При клике на arrow2, показываем arrow1
-    });
-
-    // Изначальное состояние: arrow1 виден, arrow2 скрыт (уже задано в HTML, но можно явно вызвать)
-    showArrow1();
-}); document.addEventListener('DOMContentLoaded', () => {
-    const arrow1 = document.getElementById('arrow1');
-    const arrow2 = document.getElementById('arrow2');
-
-    // Функция для показа arrow1 и скрытия arrow2
-    function showArrow1() {
-        arrow1.classList.remove('hidden');
-        arrow2.classList.add('hidden');
-    }
-
-    // Функция для показа arrow2 и скрытия arrow1
-    function showArrow2() {
-        arrow1.classList.add('hidden');
-        arrow2.classList.remove('hidden');
-    }
-
-    // Обработчик клика для arrow1
-    arrow1.addEventListener('click', () => {
-        showArrow2(); // При клике на arrow1, показываем arrow2
-    });
-
-    // Обработчик клика для arrow2
-    arrow2.addEventListener('click', () => {
-        showArrow1(); // При клике на arrow2, показываем arrow1
-    });
-
-    // Изначальное состояние: arrow1 виден, arrow2 скрыт (уже задано в HTML, но можно явно вызвать)
-    showArrow1();
 });
