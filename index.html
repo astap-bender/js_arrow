@@ -10,13 +10,11 @@
 
 <body>
     <div class='block1'>
-        <!-- Скрытый чекбокс -->
         <input type="checkbox" id="toggleArrow" class="hidden-checkbox">
-
-        <!-- Метка, связанная с чекбоксом, на которую мы будем кликать -->
-        <!-- Для стилизации и кликабельности оборачиваем arrow в label -->
         <label for="toggleArrow" class="arrow-label">
-            <div class='arrow'></div>
+            <svg class='arrow' width="100" height="100" viewBox="0 0 100 100">
+                <rect x="1" y="1" width="98" height="98" stroke="green" stroke-width="2" fill="none" />
+            </svg>
         </label>
     </div>
 </body>
