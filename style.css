@@ -17,7 +17,7 @@ body {
     margin-right: auto;
     width: 600px;
     height: 400px;
-    border: 2px solid red;
+    border: 2px solid yellow;
     display: flex;
     /* Добавим flexbox для центрирования стрелок */
     justify-content: center;
@@ -34,7 +34,7 @@ body {
     backface-visibility: hidden;
     bottom: 0;
     transform: rotate(0deg) translateZ(0);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     /* Добавим курсор, чтобы показать, что это кликабельно */
 }
 
@@ -50,7 +50,7 @@ body {
     top: 0;
     backface-visibility: hidden;
     transform: rotate(45deg) translateZ(0);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 
     /* Добавим курсор */
 }
